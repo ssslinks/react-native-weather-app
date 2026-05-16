@@ -1,50 +1,29 @@
-# Welcome to your Expo app 👋
+# 🌤️ Прогноз погоди — WeatherApp
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Мобільний додаток для перегляду актуальної погоди в реальному часі, створений на базі **React Native** (Expo) та **TypeScript**. Проєкт виконано в межах залікової роботи.
 
-## Get started
+## ✨ Особливості
+* **Пошук за назвою:** Отримання даних про погоду в будь-якому місті світу.
+* **Локалізація:** Повна підтримка української мови (назви міст, описи погоди).
+* **UI/UX:** Сучасний дизайн у стилі **Glassmorphism** з динамічним градієнтним фоном та напівпрозорими елементами.
+* **Технічні дані:** Відображення температури, вологості та швидкості вітру.
+* **Адаптивність:** Динамічна зміна іконок залежно від погодних умов (сонце, дощ, хмарність тощо).
 
-1. Install dependencies
+## 🛠️ Технологічний стек
+* **Framework:** [Expo](https://expo.dev/) (React Native)
+* **Мова:** TypeScript
+* **API:** [OpenWeatherMap API](https://openweathermap.org/api)
+* **Іконки:** `@expo/vector-icons` (MaterialCommunityIcons)
+* **Градієнт:** `expo-linear-gradient`
 
-   ```bash
-   npm install
-   ```
+## 🚀 Як запустити проєкт
 
-2. Start the app
+### 1. Підготовка
+Переконайтеся, що у вас встановлено [Node.js](https://nodejs.org/).
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### 2. Встановлення
+Клонуйте репозиторій та встановіть залежності:
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+git clone [https://github.com/ssslinks/react-native-weather-app.git](https://github.com/ssslinks/react-native-weather-app.git)
+cd react-native-weather-app
+npm install
