@@ -34,7 +34,6 @@ export default function HomeScreen() {
     }
   };
 
-  // Виправлені назви іконок для TypeScript
   const getWeatherIcon = (weatherId: number): any => {
     if (weatherId >= 200 && weatherId < 300) return 'weather-lightning';
     if (weatherId >= 300 && weatherId < 500) return 'weather-rainy';
@@ -54,7 +53,8 @@ export default function HomeScreen() {
         showsVerticalScrollIndicator={false}
       >
         
-        <Text style={styles.headerTitle}>WeatherApp</Text>
+        {/* Заголовок змінено на українську */}
+        <Text style={styles.headerTitle}>Прогноз погоди</Text>
 
         <View style={styles.searchWrapper}>
           <TextInput
@@ -119,7 +119,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   scrollContainer: { paddingHorizontal: 25, paddingTop: 60, alignItems: 'center', paddingBottom: 40 },
-  headerTitle: { fontSize: 22, fontWeight: '800', color: '#fff', marginBottom: 20, opacity: 0.9 },
+  headerTitle: { fontSize: 24, fontWeight: '800', color: '#fff', marginBottom: 20, opacity: 0.9 },
   searchWrapper: {
     flexDirection: 'row',
     backgroundColor: 'rgba(255,255,255,0.25)',
