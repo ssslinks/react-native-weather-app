@@ -7,10 +7,8 @@ const API_KEY = '63f38a24a325c5cb96dab86bdf53dcd7';
 
 export default function HomeScreen() {
   const [city, setCity] = useState('');
-  // Кажемо TypeScript, що тут може бути будь-який тип даних (any)
   const [weatherData, setWeatherData] = useState<any>(null); 
   const [loading, setLoading] = useState(false);
-  // Кажемо, що помилка може бути рядком або null
   const [error, setError] = useState<string | null>(null);
 
   const fetchWeather = async () => {
@@ -21,8 +19,12 @@ export default function HomeScreen() {
     Keyboard.dismiss(); 
 
     try {
+      // Кодуємо назву міста, щоб інтернет правильно розумів кирилицю
+      const encodedCity = encodeURIComponent(city);
+      
+      // Додаємо &lang=ua для українського опису погоди
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${encodedCity}&units=metric&lang=ua&appid=${API_KEY}`
       );
       
       if (!response.ok) {
@@ -31,7 +33,7 @@ export default function HomeScreen() {
 
       const data = await response.json();
       setWeatherData(data);
-    } catch (err: any) { // Вказуємо, що помилка (err) має тип any
+    } catch (err: any) { 
       setError(err.message);
       setWeatherData(null);
     } finally {
@@ -39,7 +41,6 @@ export default function HomeScreen() {
     }
   };
 
-  // Вказуємо, що параметр weatherId — це обов'язково число (number)
   const getWeatherIcon = (weatherId: number) => {
     if (weatherId >= 200 && weatherId < 300) return 'weather-lightning';
     if (weatherId >= 300 && weatherId < 500) return 'weather-rainy';
